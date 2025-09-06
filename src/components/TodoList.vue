@@ -60,7 +60,7 @@ const noFinishNum = computed(() =>
         </TodoItem>
       </ul>
       <div class="todoList_statistics">
-        <p> {{ noFinishNum.length }} 個未完成項目</p>
+        <p> {{ noFinishNum.length }} 個待完成項目</p>
       </div>
     </div>
   </div>
