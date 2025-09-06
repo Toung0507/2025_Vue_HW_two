@@ -50,7 +50,7 @@ const handleLogout = async () => {
     await logout();
     document.cookie = "vue3-todolist-token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
     document.cookie = "vue3-todolist-nickname=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-    router.push('/login');
+    router.push('/');
   } catch (error) {
     const message = error.response.data.message === "Cannot read properties of null (reading 'status')" ? '資料錯誤請洽詢管理員' : '出現不明錯誤';
     swalError(message);

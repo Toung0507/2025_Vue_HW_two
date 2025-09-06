@@ -6,8 +6,8 @@ import { swalError, swalSuccess } from '@/utils/swal';
 
 const router = useRouter();
 
-const email = ref('loveliuing@gmail.com')
-const nickName = ref('有寧真好')
+const email = ref('')
+const nickName = ref('')
 const password = ref('')
 const confirmPwd = ref('')
 
@@ -15,7 +15,7 @@ const handleRegister = async () => {
   try {
     await register(email.value, password.value, nickName.value);
     swalSuccess('註冊成功，請登入')
-    router.push('/login');
+    router.push('/');
   } catch (error) {
     const message = error.response.data.message;
     swalError(message);
@@ -55,9 +55,8 @@ const handleRegister = async () => {
           <input class="formControls_input" type="password" name="pwd" id="pwd" placeholder="請再次輸入密碼"
             v-model="confirmPwd" required>
 
-          <input class="formControls_btnSubmit" type="button" onclick="javascript:location.href='#todoListPage'"
-            value="註冊帳號" @click="handleRegister">
-          <router-link class="formControls_btnLink" to="/login">登入</router-link>
+          <input class="formControls_btnSubmit" type="button" value="註冊帳號" @click="handleRegister">
+          <router-link class="formControls_btnLink" to="/">登入</router-link>
         </form>
       </div>
     </div>

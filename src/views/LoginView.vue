@@ -6,8 +6,8 @@ import { swalError, swalSuccess } from '@/utils/swal';
 
 const router = useRouter();
 
-const email = ref('loveliuing@gmail.com')
-const password = ref('123456')
+const email = ref('')
+const password = ref('')
 
 const handleLogin = async () => {
   try {
@@ -43,14 +43,13 @@ const handleLogin = async () => {
           <label class="formControls_label" for="email">Email</label>
           <input class="formControls_input" type="text" id="email" name="email" placeholder="請輸入 email" v-model="email"
             required>
-          <span>此欄位不可留空</span>
+          <span v-if="!email">此欄位不可留空</span>
 
           <label class="formControls_label" for="pwd">密碼</label>
           <input class="formControls_input" type="password" name="pwd" id="pwd" placeholder="請輸入密碼" v-model="password"
             required>
 
-          <input class="formControls_btnSubmit" type="button" onclick="javascript:location.href='#todoListPage'"
-            value="登入" @click="handleLogin">
+          <input class="formControls_btnSubmit" type="button" value="登入" @click="handleLogin">
 
           <router-link class="formControls_btnLink" to="/register">註冊帳號</router-link>
         </form>
